@@ -54,7 +54,7 @@ export default function Dashboard() {
               </CardIcon>
               <p className={classes.cardCategory}>Used Space</p>
               <h3 className={classes.cardTitle}>
-                49/50 <small>GB</small>
+                59/50 <small>GB</small>
               </h3>
             </CardHeader>
             <CardFooter stats>
@@ -76,7 +76,7 @@ export default function Dashboard() {
                 <Store />
               </CardIcon>
               <p className={classes.cardCategory}>Revenue</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
+              <h3 className={classes.cardTitle}>$5000</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
