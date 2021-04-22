@@ -38,9 +38,17 @@ import {
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import { DateRangeTwoTone } from "@material-ui/icons";
 
 const useStyles = makeStyles(styles);
+const tempTableData = [
+  ["1", "Dakota Rice", "$36,738", "Niger"],
+  ["2", "Minerva Hooper", "$23,789", "Curaçao"],
+  ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
+  ["4", "Philip Chaney", "$38,735", "Korea, South"]
+]
 
+const tempTableHead =["ID", "Name", "Salary", "Country"]
 export default function Dashboard() {
   const classes = useStyles();
   return (
@@ -52,18 +60,16 @@ export default function Dashboard() {
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Used Space</p>
+              <p className={classes.cardCategory}>Inventory stats</p>
               <h3 className={classes.cardTitle}>
-                59/50 <small>GB</small>
+                42/50 <small>I-S</small>
               </h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-                <Danger>
-                  <Warning />
-                </Danger>
+                
                 <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Get more space
+                  Update Inventory!
                 </a>
               </div>
             </CardFooter>
@@ -75,8 +81,8 @@ export default function Dashboard() {
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
-              <h3 className={classes.cardTitle}>$5000</h3>
+              <p className={classes.cardCategory}>Revenue in (in Rup)</p>
+              <h3 className={classes.cardTitle}>25000</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -92,13 +98,13 @@ export default function Dashboard() {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <p className={classes.cardCategory}>Customer Complaints</p>
+              <h3 className={classes.cardTitle}>5</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-                <LocalOffer />
-                Tracked from Github
+                <DateRange />
+                Updated Last Week
               </div>
             </CardFooter>
           </Card>
@@ -109,8 +115,8 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Clients</p>
+              <h3 className={classes.cardTitle}>+15</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -162,12 +168,12 @@ export default function Dashboard() {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Email Subscriptions</h4>
-              <p className={classes.cardCategory}>Last Campaign Performance</p>
+              <h4 className={classes.cardTitle}>Hits on the Website</h4>
+              <p className={classes.cardCategory}>Performance of the Website</p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
+                <AccessTime /> Updated 1 hour ago
               </div>
             </CardFooter>
           </Card>
@@ -189,7 +195,7 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
+                <AccessTime /> Updated at 9 am
               </div>
             </CardFooter>
           </Card>
@@ -246,15 +252,11 @@ export default function Dashboard() {
               </p>
             </CardHeader>
             <CardBody>
+            
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Salary", "Country"]}
-                tableData={[
-                  ["1", "Dakota Rice", "$36,738", "Niger"],
-                  ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                  ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                  ["4", "Philip Chaney", "$38,735", "Korea, South"]
-                ]}
+                tableHead={tempTableHead}
+                tableData={tempTableData}
               />
             </CardBody>
           </Card>
