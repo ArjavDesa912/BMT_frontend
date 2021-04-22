@@ -8,13 +8,13 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
-<<<<<<< HEAD
+
 import Sidebar from "components/Sidebar/Sidebar.js";
 // import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
-=======
+import logo from "assets/img/reactlogo.png";
 
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
->>>>>>> 342154247e384503c5feb76f312964ec355690ac
+
 
 import routes from "routes.js";
 
@@ -99,7 +99,16 @@ export default function Admin({ ...rest }) {
   }, [mainPanel]);
   return (
     <div className={classes.wrapper}>
-      
+      <Sidebar
+        routes={routes}
+        logoText={"Creative Tim"}
+        logo={logo}
+        image={image}
+        handleDrawerToggle={handleDrawerToggle}
+        open={mobileOpen}
+        color={color}
+        {...rest}
+      />
       <div className={classes.mainPanel} ref={mainPanel}>
         <Navbar
           routes={routes}
@@ -115,11 +124,7 @@ export default function Admin({ ...rest }) {
           <div className={classes.map}>{switchRoutes}</div>
         )}
         {getRoute() ? <Footer /> : null}
-<<<<<<< HEAD
         
-=======
-        
->>>>>>> 342154247e384503c5feb76f312964ec355690ac
       </div>
     </div>
   );
