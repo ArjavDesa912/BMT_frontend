@@ -45,63 +45,55 @@ export default function TableList() {
   const classes = useStyles();
   return (
     <GridContainer>
+      <button className="btn">Create New Team</button>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
+        
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+          <button className="btn" style={{float: 'right'}}>Add Member</button>
+            <h4 className={classes.cardTitleWhite}>Team 1</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Sales
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHead={["Employee Name", "Post", "Current Task", "Salary"]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                ["Arjav Desai", "Sr. Manager", "BMT", "$36,738"],
+                ["Rohit Borse", "Jr. Manager", "BMT", "$23,789"],
+                ["Jahnavi Desai", "Assistant", "BMT", "$56,142"],
+                ["Akshay Kumar", "Worker", "Mining", "$38,735"],
+                ["Vijay Maliya", "Peon", "Tea", "$63,542"],
+                ["Mukesh Ambani", "Peon", "Coffee", "$78,615"]
               ]}
             />
           </CardBody>
         </Card>
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
+        <Card>
           <CardHeader plain color="primary">
+          <button className="btn" style={{float: 'right'}}>Add Member</button>
             <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
+              Team 2
             </h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Accounts
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["ID", "Name", "Country", "City", "Salary"]}
+              tableHead={["Employee Name", "Post", "Current Task", "Salary"]}
               tableData={[
-                ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-                ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-                ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-                [
-                  "4",
-                  "Philip Chaney",
-                  "$38,735",
-                  "Korea, South",
-                  "Overland Park"
-                ],
-                [
-                  "5",
-                  "Doris Greene",
-                  "$63,542",
-                  "Malawi",
-                  "Feldkirchen in Kärnten"
-                ],
-                ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+                ["Arjav Desai", "Sr. Manager", "BMT", "$36,738"],
+                ["Rohit Borse", "Jr. Manager", "BMT", "$23,789"],
+                ["Jahnavi Desai", "Assistant", "BMT", "$56,142"],
+                ["Akshay Kumar", "Worker", "Mining", "$38,735"],
+                ["Vijay Maliya", "Peon", "Tea", "$63,542"],
+                ["Mukesh Ambani", "Peon", "Coffee", "$78,615"]
               ]}
             />
           </CardBody>

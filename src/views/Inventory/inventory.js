@@ -48,15 +48,17 @@ export default function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>Inventory List</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              
             </p>
           </CardHeader>
           <CardBody>
+            <button className='btn'>Add</button>
+            <button className='btn' style={{float: 'right'}} >Remove</button>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHead={["Reference", "Destination Location", "Scheduled Date", "Status"]}
               tableData={[
                 ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
                 ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
@@ -70,38 +72,36 @@ export default function TableList() {
         </Card>
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
+        <Card>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
+              Past Inventory
             </h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+             
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["ID", "Name", "Country", "City", "Salary"]}
+              tableHead={["Reference", "Destination Location", "Scheduled Date", "Status"]}
               tableData={[
-                ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-                ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-                ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
+                ["1", "Dakota Rice", "$36,738", "Niger"],
+                ["2", "Minerva Hooper", "$23,789", "Curaçao"],
+                ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
                 [
                   "4",
                   "Philip Chaney",
                   "$38,735",
-                  "Korea, South",
-                  "Overland Park"
+                  "Korea, South"
                 ],
                 [
                   "5",
                   "Doris Greene",
                   "$63,542",
-                  "Malawi",
-                  "Feldkirchen in Kärnten"
+                  "Malawi"
                 ],
-                ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+                ["6", "Mason Porter", "$78,615", "Chile"]
               ]}
             />
           </CardBody>

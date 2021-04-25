@@ -31,7 +31,7 @@ import Inventory from "views/Inventory/inventory";
 import Teams from "views/Teams/teams";
 import Taxes from "views/Taxes/taxes";
 import invoice from "views/Invoice/invoice";
-import Orders from "views/Orders/Orders";
+import Orders from "views/Orders/orders";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
@@ -80,7 +80,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "invoice",
+    name: "Invoices",
     rtlName: "خرائط",
     icon: LocationOn,
     component: invoice,

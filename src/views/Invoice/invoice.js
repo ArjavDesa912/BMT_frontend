@@ -8,6 +8,7 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const styles = {
   cardCategoryWhite: {
@@ -48,60 +49,76 @@ export default function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>Recent Invoices</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              
             </p>
           </CardHeader>
           <CardBody>
+          <button className="btn">New Invoices</button>
+          <button className="btn" style={{float: 'right'}}>Download Invoice</button>
+         
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHead={["Select","Order Id","Company Name", "Product Name", "City", "Price"]}
+             
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                [<Checkbox
+                  
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />,"1","Dakota Rice", "Watch", "Oud-Turnhout", "$368"],
+                [<Checkbox
+                  
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />,"2","Minerva Hooper", "Mobile", "Sinaai-Waas", "$2389"],
+                [<Checkbox
+                  
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />,"3","Sage Rodriguez", "Laptop", "Baileux", "$5612"],
+                [<Checkbox
+                  
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />,"4","Philip Chaney", "Computer, South", "Overland Park", "$387"],
+                [<Checkbox
+                  
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />,"5","Doris Greene", "TV", "Feldkirchen in Kärnten", "$63"],
+                [<Checkbox
+                  
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />,"6","Mason Porter", "Fan", "Gloucester", "$78"]
               ]}
             />
           </CardBody>
         </Card>
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
+        <Card>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
+              Pending Invoices
             </h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["ID", "Name", "Country", "City", "Salary"]}
+              tableHead={["Order Id","Company Name", "Product Name", "City", "Price"]}
               tableData={[
-                ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-                ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-                ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-                [
-                  "4",
-                  "Philip Chaney",
-                  "$38,735",
-                  "Korea, South",
-                  "Overland Park"
-                ],
-                [
-                  "5",
-                  "Doris Greene",
-                  "$63,542",
-                  "Malawi",
-                  "Feldkirchen in Kärnten"
-                ],
-                ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+                ["10","Mini", "Watch", "Oud-Turnhout", "$368"],
+                ["20","Lenovo", "Mobile", "Sinaai-Waas", "$2389"],
+                ["30","Razer", "Laptop", "Baileux", "$5612"],
+                ["40","AIO", "Computer, South", "Overland Park", "$387"],
+                ["50","Oneplus", "TV", "Feldkirchen in Kärnten", "$63"],
+                ["60","Crompton", "Fan", "Gloucester", "$78"]
               ]}
             />
           </CardBody>
