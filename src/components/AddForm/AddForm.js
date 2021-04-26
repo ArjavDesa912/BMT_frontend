@@ -28,7 +28,7 @@ const AddForm = ({ onAdd }) => {
   return (
     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
-        <label>Task</label>
+        <label>Company Name</label>
         <input
           type='text'
           placeholder='Add Company Name'
@@ -37,7 +37,7 @@ const AddForm = ({ onAdd }) => {
         />
       </div>
      <div className='form-control'>
-        <label>Task</label>
+        <label>Product Name</label>
         <input
           type='text'
           placeholder='Add Product Name'
@@ -46,7 +46,7 @@ const AddForm = ({ onAdd }) => {
         />
       </div>
       <div className='form-control'>
-        <label>Task</label>
+        <label>Location</label>
         <input
           type='text'
           placeholder='Add Location '
@@ -55,7 +55,7 @@ const AddForm = ({ onAdd }) => {
         />
       </div>
       <div className='form-control'>
-        <label>Task</label>
+        <label>Price</label>
         <input
           type='text'
           placeholder='Add Price'

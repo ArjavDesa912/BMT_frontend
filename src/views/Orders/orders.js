@@ -2,6 +2,7 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
+import{ useState} from 'react'
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import Table from "components/Table/Table.js";
@@ -39,9 +40,20 @@ const styles = {
   }
 };
 
+
 const useStyles = makeStyles(styles);
 
 export default function TableList() {
+  const [Orders, setOrders] = useState([])
+  const addOrder =  (order) => {
+    
+
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newOrder = { id, ...order }
+    setOrders([...Orders, newOrder])
+    
+  }
+  
   const classes = useStyles();
   return (
     <GridContainer>
@@ -55,7 +67,7 @@ export default function TableList() {
           </CardHeader>
           <CardBody>
             <button className="btn">Add Order</button>
-            <AddForm></AddForm>
+            <AddForm onAdd={addOrder}></AddForm>
             <button className="btn" style={{float: 'right'}}>Manage Order</button>
             <Table
               tableHeaderColor="primary"
