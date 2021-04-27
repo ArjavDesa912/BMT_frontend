@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -8,6 +9,8 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import AddTeam from "components/AddForm/AddTeam";
+import AddMember from "components/AddForm/AddMember";
 
 const styles = {
   cardCategoryWhite: {
@@ -43,18 +46,30 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
+  const [Orders, setOrders] = useState([])
+  const addOrder =  (order) => {
+    
+
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newOrder = { id, ...order }
+    setOrders([...Orders, newOrder])
+    
+  }
   return (
     <GridContainer>
       <button className="btn">Create New Team</button>
+      <AddTeam onAdd={addOrder}></AddTeam>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
         
           <CardHeader color="primary">
           <button className="btn" style={{float: 'right'}}>Add Member</button>
+          
             <h4 className={classes.cardTitleWhite}>Team 1</h4>
             <p className={classes.cardCategoryWhite}>
               Sales
             </p>
+            <AddMember onAdd={addOrder}></AddMember>
           </CardHeader>
           <CardBody>
             <Table
@@ -76,6 +91,7 @@ export default function TableList() {
         <Card>
           <CardHeader plain color="primary">
           <button className="btn" style={{float: 'right'}}>Add Member</button>
+          <AddMember onAdd={addOrder}></AddMember>
             <h4 className={classes.cardTitleWhite}>
               Team 2
             </h4>

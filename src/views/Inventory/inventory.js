@@ -8,6 +8,8 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import AddInventory from "components/AddForm/AddInventory";
+import { useState } from 'react'
 
 const styles = {
   cardCategoryWhite: {
@@ -43,18 +45,28 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
+  const [Orders, setOrders] = useState([])
+  const addOrder =  (order) => {
+    
+
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newOrder = { id, ...order }
+    setOrders([...Orders, newOrder])
+    
+  }
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Inventory List</h4>
+            <h4 className={classes.cardTitleWhite}>Current Inventory</h4>
             <p className={classes.cardCategoryWhite}>
               
             </p>
           </CardHeader>
           <CardBody>
             <button className='btn'>Add</button>
+            <AddInventory onAdd={addOrder}></AddInventory>
             <button className='btn' style={{float: 'right'}} >Remove</button>
             <Table
               tableHeaderColor="primary"

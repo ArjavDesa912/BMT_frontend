@@ -9,6 +9,9 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import Checkbox from "@material-ui/core/Checkbox";
+import AddInvoice from "components/AddForm/AddInvoice";
+import{ useState} from 'react'
+
 
 const styles = {
   cardCategoryWhite: {
@@ -44,6 +47,15 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
+  const [Orders, setOrders] = useState([])
+  const addOrder =  (order) => {
+    
+
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newOrder = { id, ...order }
+    setOrders([...Orders, newOrder])
+    
+  }
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -56,7 +68,9 @@ export default function TableList() {
           </CardHeader>
           <CardBody>
           <button className="btn">New Invoices</button>
+          <AddInvoice onAdd={addOrder}></AddInvoice>
           <button className="btn" style={{float: 'right'}}>Download Invoice</button>
+          
          
             <Table
               tableHeaderColor="primary"
