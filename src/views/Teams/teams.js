@@ -10,6 +10,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import AddTeam from "components/AddForm/AddTeam";
+import Button from "@material-ui/core/Button";
 import AddMember from "components/AddForm/AddMember";
 
 const styles = {
@@ -56,14 +57,24 @@ export default function TableList() {
     
   }
   return (
+    
     <GridContainer>
-      <button className="btn">Create New Team</button>
-      <AddTeam onAdd={addOrder}></AddTeam>
+    
       <GridItem xs={12} sm={12} md={12}>
+      <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    size="sm"
+            
+                  >
+              Create New Team
+              </Button><br></br>
+              <br></br><AddTeam onAdd={addOrder}></AddTeam>
         <Card>
         
           <CardHeader color="primary">
-          <button className="btn" style={{float: 'right'}}>Add Member</button>
+          <Button variant="contained" color="primary" style={{float: 'right'}}>Add Member</Button>
           
             <h4 className={classes.cardTitleWhite}>Team 1</h4>
             <p className={classes.cardCategoryWhite}>
@@ -90,14 +101,15 @@ export default function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader plain color="primary">
-          <button className="btn" style={{float: 'right'}}>Add Member</button>
-          <AddMember onAdd={addOrder}></AddMember>
+          <Button variant="contained" color="primary" style={{float: 'right'}}>Add Member</Button>
+          
             <h4 className={classes.cardTitleWhite}>
               Team 2
             </h4>
             <p className={classes.cardCategoryWhite}>
               Accounts
             </p>
+            <AddMember onAdd={addOrder}></AddMember>
           </CardHeader>
           <CardBody>
             <Table

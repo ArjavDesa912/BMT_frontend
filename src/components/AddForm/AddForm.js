@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import React from 'react';
+import { createMuiTheme } from '@material-ui/core/styles';
 const AddForm = ({ onAdd }) => {
   const [CName, setCname] = useState('')
   const [Pname, setPname] = useState('')
   const [Location, setLocation] = useState('')
   const [Price, setPrice] = useState('')
-
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: 'dark',
+    },
+  });
   const onSubmit = (e) => {
     e.preventDefault()
 

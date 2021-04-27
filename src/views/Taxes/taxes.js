@@ -9,6 +9,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import AddTax from "components/AddForm/AddTax";
+import Button from "@material-ui/core/Button";
 import{ useState} from 'react'
 const styles = {
   cardCategoryWhite: {
@@ -65,7 +66,7 @@ export default function TableList() {
             </p>
           </CardHeader>
           <CardBody>
-          <button className="btn">Add Order</button>
+          <Button variant="contained" color="primary">Add Entry</Button>
           <AddTax onAdd={addOrder}></AddTax>
           
             <Table

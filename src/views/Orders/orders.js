@@ -10,6 +10,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import AddForm from "components/AddForm/AddForm";
+import Button from "@material-ui/core/Button";
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -66,9 +67,9 @@ export default function TableList() {
             </p>
           </CardHeader>
           <CardBody>
-            <button className="btn">Add Order</button>
+          <Button variant="contained" color="primary">Add Order</Button>
             <AddForm onAdd={addOrder}></AddForm>
-            <button className="btn" style={{float: 'right'}}>Manage Order</button>
+            <Button variant="contained" color="primary" style={{float: 'right'}}>Manage Order</Button>
             <Table
               tableHeaderColor="primary"
               tableHead={["Order Id","Company Name", "Product Name", "Location", "Price"]}

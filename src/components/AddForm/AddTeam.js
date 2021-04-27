@@ -47,7 +47,7 @@ const AddTeam = ({ onAdd }) => {
         />
       </div>
       
-      <input type='submit' value='Save Task' className='btn btn-block' />
+      <input color="primary" type='submit' value='Save Task' className='btn btn-block' />
     </form>
   )
 }

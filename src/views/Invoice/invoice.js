@@ -11,6 +11,7 @@ import CardBody from "components/Card/CardBody.js";
 import Checkbox from "@material-ui/core/Checkbox";
 import AddInvoice from "components/AddForm/AddInvoice";
 import{ useState} from 'react'
+import Button from "@material-ui/core/Button"
 
 
 const styles = {
@@ -67,9 +68,9 @@ export default function TableList() {
             </p>
           </CardHeader>
           <CardBody>
-          <button className="btn">New Invoices</button>
+          <Button variant="contained" color="primary">New Invoices</Button>
           <AddInvoice onAdd={addOrder}></AddInvoice>
-          <button className="btn" style={{float: 'right'}}>Download Invoice</button>
+          <Button variant="contained" color="primary" style={{float: 'right'}}>Download Invoice</Button>
           
          
             <Table

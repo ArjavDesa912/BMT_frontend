@@ -9,6 +9,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import AddInventory from "components/AddForm/AddInventory";
+import Button from "@material-ui/core/Button"
 import { useState } from 'react'
 
 const styles = {
@@ -65,9 +66,9 @@ export default function TableList() {
             </p>
           </CardHeader>
           <CardBody>
-            <button className='btn'>Add</button>
+          <Button variant="contained" color="primary">Add</Button>
             <AddInventory onAdd={addOrder}></AddInventory>
-            <button className='btn' style={{float: 'right'}} >Remove</button>
+            <Button variant="contained" color="primary" style={{float: 'right'}}>Remove</Button>
             <Table
               tableHeaderColor="primary"
               tableHead={["Reference", "Destination Location", "Scheduled Date", "Status"]}
