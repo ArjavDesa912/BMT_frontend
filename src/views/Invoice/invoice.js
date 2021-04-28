@@ -69,7 +69,7 @@ export default function TableList() {
           </CardHeader>
           <CardBody>
           <Button variant="contained" color="primary">New Invoices</Button>
-          <AddInvoice onAdd={addOrder}></AddInvoice>
+          <AddInvoice onAdd={addOrder}></AddInvoice> 
           <Button variant="contained" color="primary" style={{float: 'right'}}>Download Invoice</Button>
           
          

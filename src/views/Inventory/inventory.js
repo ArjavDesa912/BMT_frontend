@@ -67,18 +67,18 @@ export default function TableList() {
           </CardHeader>
           <CardBody>
           <Button variant="contained" color="primary">Add</Button>
-            <AddInventory onAdd={addOrder}></AddInventory>
+           <AddInventory onAdd={addOrder}></AddInventory>
             <Button variant="contained" color="primary" style={{float: 'right'}}>Remove</Button>
             <Table
               tableHeaderColor="primary"
               tableHead={["Reference", "Destination Location", "Scheduled Date", "Status"]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                ["23121", "Niger", "21/02/2021", "Delivered"],
+                ["3213", "Curaçao", "21/02/2021", "Delivered"],
+                ["32564", "Netherlands", "21/02/2021", "In Transit"],
+                ["3455", "Korea, South", "21/02/2021", "In Transit"],
+                ["6679", "Malawi", "21/02/2021", "Delivered"],
+                ["5436", "Chile", "21/02/2021", "In Transit"]
               ]}
             />
           </CardBody>
@@ -99,22 +99,12 @@ export default function TableList() {
               tableHeaderColor="primary"
               tableHead={["Reference", "Destination Location", "Scheduled Date", "Status"]}
               tableData={[
-                ["1", "Dakota Rice", "$36,738", "Niger"],
-                ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                [
-                  "4",
-                  "Philip Chaney",
-                  "$38,735",
-                  "Korea, South"
-                ],
-                [
-                  "5",
-                  "Doris Greene",
-                  "$63,542",
-                  "Malawi"
-                ],
-                ["6", "Mason Porter", "$78,615", "Chile"]
+                ["1323", "Niger", "21/02/2010", "Delivered"],
+                ["5414", "Curaçao", "21/02/2010", "Delivered"],
+                ["4563", "Netherlands", "21/02/2010", "Delivered"],
+                ["5433", "Korea, South", "21/02/2010", "Delivered"],
+                ["5312", "Malawi", "21/02/2010", "Delivered"],
+                ["5241", "Chile", "21/02/2010", "Returned"]
               ]}
             />
           </CardBody>

@@ -70,7 +70,7 @@ export default function TableList() {
                   >
               Create New Team
               </Button><br></br>
-              <br></br><AddTeam onAdd={addOrder}></AddTeam>
+             <br></br><AddTeam onAdd={addOrder}></AddTeam>
         <Card>
         
           <CardHeader color="primary">
@@ -80,8 +80,9 @@ export default function TableList() {
             <p className={classes.cardCategoryWhite}>
               Sales
             </p>
-            <AddMember onAdd={addOrder}></AddMember>
+            
           </CardHeader>
+           <AddMember onAdd={addOrder}></AddMember>
           <CardBody>
             <Table
               tableHeaderColor="primary"
@@ -109,8 +110,9 @@ export default function TableList() {
             <p className={classes.cardCategoryWhite}>
               Accounts
             </p>
-            <AddMember onAdd={addOrder}></AddMember>
+            
           </CardHeader>
+         <AddMember onAdd={addOrder}></AddMember>
           <CardBody>
             <Table
               tableHeaderColor="primary"

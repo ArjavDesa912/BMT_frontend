@@ -74,7 +74,7 @@ const AddInvoice = ({ onAdd }) => {
         />
       </div>
 
-      <input type='submit' value='Save Task' className='btn btn-block' />
+      <input type='submit' value='Done' className='btn btn-block' />
     </form>
   )
 }
