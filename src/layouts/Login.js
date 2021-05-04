@@ -41,7 +41,12 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
+var email=""
+var pass = ""
+const onSubmit =(e) =>{
 
+console.log(e)
+}
 export default function Login() {
   const classes = useStyles();
 
@@ -55,7 +60,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={onSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -66,6 +71,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            value= {email}
           />
           <TextField
             variant="outlined"
@@ -77,8 +83,9 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value ={pass}
           />
-          <Route render={({ history}) => (
+          <Route render={({ history}) => ( 
           <Button
             type="submit"
             fullWidth
@@ -89,7 +96,7 @@ export default function Login() {
           >
             Sign In
           </Button>
-          )} />
+           )} /> 
 
           <Grid container>
             

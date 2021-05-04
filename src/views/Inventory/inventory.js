@@ -12,6 +12,9 @@ import AddInventory from "components/AddForm/AddInventory";
 import Button from "@material-ui/core/Button"
 import { useState } from 'react'
 
+
+
+
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -45,6 +48,7 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 export default function TableList() {
+  const [toggle,setToggle]= useState(false)
   const classes = useStyles();
   const [Orders, setOrders] = useState([])
   const addOrder =  (order) => {
@@ -66,8 +70,8 @@ export default function TableList() {
             </p>
           </CardHeader>
           <CardBody>
-          <Button variant="contained" color="primary">Add</Button>
-           <AddInventory onAdd={addOrder}></AddInventory>
+          <Button variant="contained" color="primary" onClick={()=>setToggle(!toggle)}>Add</Button>
+           {toggle &&<AddInventory onAdd={addOrder}></AddInventory>}
             <Button variant="contained" color="primary" style={{float: 'right'}}>Remove</Button>
             <Table
               tableHeaderColor="primary"
