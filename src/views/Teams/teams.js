@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -8,6 +9,9 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import AddTeam from "components/AddForm/AddTeam";
+import Button from "@material-ui/core/Button";
+import AddMember from "components/AddForm/AddMember";
 
 const styles = {
   cardCategoryWhite: {
@@ -43,19 +47,42 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
+  const [Orders, setOrders] = useState([])
+  const addOrder =  (order) => {
+    
+
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newOrder = { id, ...order }
+    setOrders([...Orders, newOrder])
+    
+  }
   return (
+    
     <GridContainer>
-      <button className="btn">Create New Team</button>
+    
       <GridItem xs={12} sm={12} md={12}>
+      <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    size="sm"
+            
+                  >
+              Create New Team
+              </Button><br></br>
+             <br></br><AddTeam onAdd={addOrder}></AddTeam>
         <Card>
         
           <CardHeader color="primary">
-          <button className="btn" style={{float: 'right'}}>Add Member</button>
+          <Button variant="contained" color="primary" style={{float: 'right'}}>Add Member</Button>
+          
             <h4 className={classes.cardTitleWhite}>Team 1</h4>
             <p className={classes.cardCategoryWhite}>
               Sales
             </p>
+            
           </CardHeader>
+           <AddMember onAdd={addOrder}></AddMember>
           <CardBody>
             <Table
               tableHeaderColor="primary"
@@ -75,14 +102,17 @@ export default function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader plain color="primary">
-          <button className="btn" style={{float: 'right'}}>Add Member</button>
+          <Button variant="contained" color="primary" style={{float: 'right'}}>Add Member</Button>
+          
             <h4 className={classes.cardTitleWhite}>
               Team 2
             </h4>
             <p className={classes.cardCategoryWhite}>
               Accounts
             </p>
+            
           </CardHeader>
+         <AddMember onAdd={addOrder}></AddMember>
           <CardBody>
             <Table
               tableHeaderColor="primary"

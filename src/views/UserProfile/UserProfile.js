@@ -40,7 +40,8 @@ export default function UserProfile() {
   const classes = useStyles();
   return (
     <div>
-      <GridContainer>
+    
+  <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
@@ -51,14 +52,12 @@ export default function UserProfile() {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={5}>
                   <CustomInput
-                    labelText="Company (disabled)"
-                    id="company-disabled"
+                    labelText="Company"
+                    id = "company"
                     formControlProps={{
                       fullWidth: true
                     }}
-                    inputProps={{
-                      disabled: true
-                    }}
+                   
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
@@ -128,7 +127,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-              </GridContainer>
+                  </GridContainer>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                   <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
@@ -149,7 +148,7 @@ export default function UserProfile() {
             <CardFooter>
               <Button color="primary">Update Profile</Button>
             </CardFooter>
-          </Card>
+          </Card> 
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
           <Card profile>
@@ -167,7 +166,7 @@ export default function UserProfile() {
                 I love Rick Owens’ bed design but the back is...
               </p>
               <Button color="primary" round>
-                Follow
+                Edit Profile
               </Button>
             </CardBody>
           </Card>

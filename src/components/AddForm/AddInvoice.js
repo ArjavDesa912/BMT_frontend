@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import React from 'react';
-import { createMuiTheme } from '@material-ui/core/styles';
-const AddForm = ({ onAdd }) => {
+const AddInvoice = ({ onAdd }) => {
   const [CName, setCname] = useState('')
   const [Pname, setPname] = useState('')
   const [Location, setLocation] = useState('')
   const [Price, setPrice] = useState('')
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: 'dark',
-    },
-  });
+
   const onSubmit = (e) => {
     e.preventDefault()
 
@@ -33,34 +28,44 @@ const AddForm = ({ onAdd }) => {
   return (
     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
-        <label>Company Name</label>
+        <label>Order ID &nbsp;</label> 
         <input
           type='text'
-          placeholder='Add Company Name'
+          placeholder='Add OrderID'
           value={CName}
           onChange={(e) => setCname(e.target.value)}
         />
       </div>
+  
      <div className='form-control'>
-        <label>Product Name</label>
+        <label>Company Name &nbsp;</label>
         <input
           type='text'
-          placeholder='Add Product Name'
+          placeholder='Add Company Name'
           value={Pname}
           onChange={(e) => setPname(e.target.value)}
         />
       </div>
       <div className='form-control'>
-        <label>Location</label>
+        <label>Product Name &nbsp;</label>
         <input
           type='text'
-          placeholder='Add Location '
+          placeholder='Add Product Name'
           value={Location}
           onChange={(e) => setLocation(e.target.value)}
         />
       </div>
       <div className='form-control'>
-        <label>Price</label>
+        <label>City &nbsp;</label>
+        <input
+          type='text'
+          placeholder='Add City'
+          value={Price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+      </div>
+      <div className='form-control'>
+        <label>Price &nbsp;</label>
         <input
           type='text'
           placeholder='Add Price'
@@ -74,4 +79,4 @@ const AddForm = ({ onAdd }) => {
   )
 }
 
-export default AddForm
+export default AddInvoice

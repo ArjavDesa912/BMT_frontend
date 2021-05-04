@@ -8,7 +8,9 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import AddTax from "components/AddForm/AddTax";
+import Button from "@material-ui/core/Button";
+import{ useState} from 'react'
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -43,6 +45,16 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
+
+  const [Orders, setOrders] = useState([])
+  const addOrder =  (order) => {
+    
+
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newOrder = { id, ...order }
+    setOrders([...Orders, newOrder])
+    
+  }
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -54,16 +66,19 @@ export default function TableList() {
             </p>
           </CardHeader>
           <CardBody>
+          <Button variant="contained" color="primary">Add Entry</Button>
+          <AddTax onAdd={addOrder}></AddTax>
+          
             <Table
-              tableHeaderColor="primary"
+                 tableHeaderColor="primary"
               tableHead={["Order Id","Company Name", "Product Name", "Price", "Price(Incl. Tax(18%))"]}
               tableData={[
-                ["1","Dakota Rice", "Watch", "$368"],
-                ["2","Minerva Hooper", "Mobile", "$2389"],
-                ["3","Sage Rodriguez", "Laptop", "$5612"],
-                ["4","Philip Chaney", "Computer, South", "$387"],
-                ["5","Doris Greene", "TV", "$63"],
-                ["6","Mason Porter", "Fan", "$78"]
+                ["1","Dakota Rice", "Watch", "$368","$434.24"],
+                ["2","Minerva Hooper", "Mobile", "$2389","$2819.02"],
+                ["3","Sage Rodriguez", "Laptop", "$5612","$6622.16"],
+                ["4","Philip Chaney", "Computer, South", "$387","$456.66"],
+                ["5","Doris Greene", "TV", "$63","$74.34"],
+                ["6","Mason Porter", "Fan", "$78","$92.04"]
               ]}
             />
           </CardBody>

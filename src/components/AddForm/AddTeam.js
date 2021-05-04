@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import React from 'react';
-import { createMuiTheme } from '@material-ui/core/styles';
-const AddForm = ({ onAdd }) => {
+const AddTeam = ({ onAdd }) => {
   const [CName, setCname] = useState('')
   const [Pname, setPname] = useState('')
   const [Location, setLocation] = useState('')
   const [Price, setPrice] = useState('')
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: 'dark',
-    },
-  });
+
   const onSubmit = (e) => {
     e.preventDefault()
 
@@ -33,45 +28,28 @@ const AddForm = ({ onAdd }) => {
   return (
     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
-        <label>Company Name</label>
+        <label>Team Name &nbsp;</label> 
         <input
           type='text'
-          placeholder='Add Company Name'
+          placeholder='Add Team Name'
           value={CName}
           onChange={(e) => setCname(e.target.value)}
         />
       </div>
+  
      <div className='form-control'>
-        <label>Product Name</label>
+        <label>Team type &nbsp;</label>
         <input
           type='text'
-          placeholder='Add Product Name'
+          placeholder='Add team type'
           value={Pname}
           onChange={(e) => setPname(e.target.value)}
         />
       </div>
-      <div className='form-control'>
-        <label>Location</label>
-        <input
-          type='text'
-          placeholder='Add Location '
-          value={Location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
-      </div>
-      <div className='form-control'>
-        <label>Price</label>
-        <input
-          type='text'
-          placeholder='Add Price'
-          value={Price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-      </div>
-
+      
       <input type='submit' value='Done' className='btn btn-block' />
     </form>
   )
 }
 
-export default AddForm
+export default AddTeam

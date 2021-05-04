@@ -32,9 +32,9 @@ import Teams from "views/Teams/teams";
 import Taxes from "views/Taxes/taxes";
 import invoice from "views/Invoice/invoice";
 import Orders from "views/Orders/orders";
-import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
+
 // core components/views for RTL layout
-import RTLPage from "views/RTLPage/RTLPage.js";
+
 
 const dashboardRoutes = [
   {
@@ -92,22 +92,6 @@ const dashboardRoutes = [
     rtlName: "إخطارات",
     icon: Notifications,
     component: Orders,
-    layout: "/admin"
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl"
-  },
-  {
-    path: "/upgrade-to-pro",
-    name: "Upgrade To PRO",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
     layout: "/admin"
   }
 ];
