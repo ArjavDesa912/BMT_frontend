@@ -15,7 +15,7 @@ import Container from '@material-ui/core/Container';
 import ReactDOM from "react-dom";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import admin from './Admin';
-
+import {useState} from 'react';
 
 const dashRedirect =()=>{
   return <Redirect from='/login' to='/admin/dashboard'/>
@@ -41,15 +41,23 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-var email=""
-var pass = ""
-const onSubmit =(e) =>{
 
-console.log(e)
-}
 export default function Login() {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('')
+  const [auth, setAuth] = useState(false)
+  const onSubmit =(e) =>{
+     e.preventDefault()
+    if(email=='admin@admin.com'& pass=='admin'){
+        setAuth(true)
 
+    }
+    else{
+      alert('enter correct Credentials')
+    }
+     
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -72,6 +80,7 @@ export default function Login() {
             autoComplete="email"
             autoFocus
             value= {email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             variant="outlined"
@@ -84,19 +93,20 @@ export default function Login() {
             id="password"
             autoComplete="current-password"
             value ={pass}
+            onChange={(e) => setPass(e.target.value)}
           />
-          <Route render={({ history}) => ( 
+         
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={()=>{ history.push('/admin/dashboard') }}
+            // onClick={()=>{ history.push('/admin/dashboard') }}
           >
             Sign In
           </Button>
-           )} /> 
+          {auth &&<Route render={({ history}) => ( history.push('/admin/dashboard') )} />}
 
           <Grid container>
             
